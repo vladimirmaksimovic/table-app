@@ -367,3 +367,25 @@ function insertNewRow() {
       "</td></tr>"
   }
 }
+
+function testInsert() {
+  // GET TEST TABLE
+  const testTabel = document.getElementById("test-table")
+  // GET ROW IN TEST TABLE
+  //const testRow = document.getElementById("test-row")
+  const testRow = testTabel.insertRow(-1)
+  // SET VALUE FOR LOOP
+  const vrednost = opcije.value - 1
+
+  if (opcijeObed.value === "dorucak" && opcije.value) {
+    //for (i = 0; i < nizOpcija.length; i++) {
+    //console.log(nizOpcija[i])
+    console.log(opcije.value)
+    for (const prop in nizOpcija[vrednost]) {
+      //console.log(prop + " ---> " + nizOpcija[i][prop])
+      testRow.innerHTML +=
+        "<td>" + prop + " ---> " + nizOpcija[vrednost][prop] + "</td>"
+    }
+    //}
+  }
+}
