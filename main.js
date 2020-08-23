@@ -170,151 +170,10 @@ let nizOpcijaKrace = [
 // vars
 const table = document.getElementsByTagName("table")
 const data = document.getElementById("data-container")
-//const sortData = so
 const dorucak = document.getElementById("dorucak")
 
 let opcijeObed = document.getElementsByName("obed")[0]
 const opcije = document.getElementsByName("opcije")[0]
-
-console.log(nizOpcija[0].id)
-console.log(table)
-
-/* for (let i = 0; i < table.length; i++) {
-  console.log(table[i])
-} */
-
-/* function izaberiObed() {
-  let vrednost = nizOpcija[opcije.value - 1]
-
-  if (opcijeObed.value === "dorucak" && opcije.value) {
-    console.log(opcijeObed.value)
-
-    data.innerHTML +=
-      "<tr class='1'><td>" +
-      vrednost.vrstaJela +
-      "</td><td>" +
-      vrednost.jedinicaMere +
-      "</td><td>" +
-      vrednost.kolicinaJela.poVojniku +
-      "</td><td>" +
-      vrednost.kolicinaJela.svega +
-      "</td><td>" +
-      vrednost.termickaSredstvaIPosudjeZaPripremuJela +
-      "</td><td>" +
-      vrednost.vremeObade +
-      "</td><td>" +
-      vrednost.osobljeZaTermickuObradu +
-      "</td><td>" +
-      vrednost.linija1.kolicinaJela +
-      "</td><td>" +
-      vrednost.linija1.osobljeZaPodelu +
-      "</td><td>" +
-      vrednost.linija2.kolicinaJela +
-      "</td><td>" +
-      vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>"
-  } else if (opcijeObed.value === "uzina" && opcije.value) {
-    console.log(opcijeObed.value)
-
-    data.innerHTML +=
-      "<tr class='2'><td>" +
-      vrednost.vrstaJela +
-      "</td><td>" +
-      vrednost.jedinicaMere +
-      "</td><td>" +
-      vrednost.kolicinaJela.poVojniku +
-      "</td><td>" +
-      vrednost.kolicinaJela.svega +
-      "</td><td>" +
-      vrednost.termickaSredstvaIPosudjeZaPripremuJela +
-      "</td><td>" +
-      vrednost.vremeObade +
-      "</td><td>" +
-      vrednost.osobljeZaTermickuObradu +
-      "</td><td>" +
-      vrednost.linija1.kolicinaJela +
-      "</td><td>" +
-      vrednost.linija1.osobljeZaPodelu +
-      "</td><td>" +
-      vrednost.linija2.kolicinaJela +
-      "</td><td>" +
-      vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>"
-  } else if (opcijeObed.value === "rucak" && opcije.value) {
-    console.log(opcijeObed.value)
-
-    data.innerHTML +=
-      "<tr class='3'><td>" +
-      vrednost.vrstaJela +
-      "</td><td>" +
-      vrednost.jedinicaMere +
-      "</td><td>" +
-      vrednost.kolicinaJela.poVojniku +
-      "</td><td>" +
-      vrednost.kolicinaJela.svega +
-      "</td><td>" +
-      vrednost.termickaSredstvaIPosudjeZaPripremuJela +
-      "</td><td>" +
-      vrednost.vremeObade +
-      "</td><td>" +
-      vrednost.osobljeZaTermickuObradu +
-      "</td><td>" +
-      vrednost.linija1.kolicinaJela +
-      "</td><td>" +
-      vrednost.linija1.osobljeZaPodelu +
-      "</td><td>" +
-      vrednost.linija2.kolicinaJela +
-      "</td><td>" +
-      vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>"
-  } else {
-    console.log(opcijeObed.value)
-
-    data.innerHTML +=
-      "<tr class='4'><td>" +
-      vrednost.vrstaJela +
-      "</td><td>" +
-      vrednost.jedinicaMere +
-      "</td><td>" +
-      vrednost.kolicinaJela.poVojniku +
-      "</td><td>" +
-      vrednost.kolicinaJela.svega +
-      "</td><td>" +
-      vrednost.termickaSredstvaIPosudjeZaPripremuJela +
-      "</td><td>" +
-      vrednost.vremeObade +
-      "</td><td>" +
-      vrednost.osobljeZaTermickuObradu +
-      "</td><td>" +
-      vrednost.linija1.kolicinaJela +
-      "</td><td>" +
-      vrednost.linija1.osobljeZaPodelu +
-      "</td><td>" +
-      vrednost.linija2.kolicinaJela +
-      "</td><td>" +
-      vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>"
-  }
-} */
-
-// f-n za sortiranje
-/* function sortTable(data) {
-  for (let i = 0; i < data.length - 1; i++) {
-    for (let j = 0; j < data.length; j++) {
-      if (
-        parseInt(parse.data[i].firstElementChild.className) <
-        parseInt(data[j].firstElementChild.className)
-      ) {
-        let pom = data[i]
-        data[i] = data[j]
-        data[j] = pom
-      }
-    }
-  }
-  return data
-} */
-
-//console.log(data.firstElementChild.className)
 
 /************************************/
 
@@ -339,13 +198,14 @@ console.log(table)
 
 function insertNewRow() {
   let vrednost = nizOpcija[opcije.value - 1]
+  const thead = document.getElementsByTagName("thead");
 
   if (opcijeObed.value === "dorucak" && opcije.value) {
-    console.log(opcijeObed.value)
-    console.log(table[opcijeObed.value])
+    console.log(opcijeObed.value);
+    console.log(table[opcijeObed.value]);
 
     table[opcijeObed.value].innerHTML +=
-      "<tr><td contenteditable>" +
+      "<tr><td>" + opcijeObed.value + "</td><td contenteditable>" +
       vrednost.vrstaJela +
       "</td><td>" +
       vrednost.jedinicaMere +
@@ -372,7 +232,7 @@ function insertNewRow() {
     console.log(opcijeObed.value)
 
     table[opcijeObed.value].innerHTML +=
-      "<tr><td>" +
+      "<tr><td>" + opcijeObed.value + "</td><td>" +
       vrednost.vrstaJela +
       "</td><td>" +
       vrednost.jedinicaMere +
@@ -399,7 +259,7 @@ function insertNewRow() {
     console.log(opcijeObed.value)
 
     table[opcijeObed.value].innerHTML +=
-      "<tr><td>" +
+      "<tr><td>" + opcijeObed.value + "</td><td>" +
       vrednost.vrstaJela +
       "</td><td>" +
       vrednost.jedinicaMere +
@@ -426,7 +286,7 @@ function insertNewRow() {
     console.log(opcijeObed.value)
 
     table[opcijeObed.value].innerHTML +=
-      "<tr><td>" +
+      "<tr><td>" + opcijeObed.value + "</td><td>" +
       vrednost.vrstaJela +
       "</td><td>" +
       vrednost.jedinicaMere +
@@ -450,27 +310,22 @@ function insertNewRow() {
       vrednost.linija2.osobljeZaPodelu +
       "</td></tr>"
   }
+
+  /* if (opcijeObed.value) {
+    thead.style.display = "block";
+  } */
 }
+
 
 function testInsert() {
   // GET TEST TABLE
   const testTabel = document.getElementsByClassName("test-table")
-
-  console.log(testTabel)
-
   const newRow = document.getElementsByClassName("tr")
-  //console.log(newRow[opcijeObed.value])
   const newTable = testTabel[opcijeObed.value]
-  console.log(newTable)
   const testRow = newTable.insertRow(-1)
   // SET VALUE FOR LOOP
-  //const testCell = testRow.insertCell(-1)
   const vrednost = opcije.value - 1
 
-  //for (i = 0; i < nizOpcija.length; i++) {
-  //console.log(nizOpcija[i])
-  //console.log("Vrednost izabranog obeda je --> " + opcijeObed.value)
-  console.log(testRow)
   for (const prop in nizOpcijaKrace[vrednost]) {
     if (opcijeObed.value === "dorucak" && opcije.value) {
       //console.log(prop + " ---> " + nizOpcija[i][prop])
@@ -478,6 +333,5 @@ function testInsert() {
         //"<td>" + prop + " ---> " + nizOpcija[vrednost][prop] + "</td>"
         "<tr><td>" + nizOpcija[vrednost][prop] + "</td></tr>"
     }
-    //}
   }
 }
