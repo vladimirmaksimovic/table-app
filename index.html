@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <body>
+    <form>
+      <label for="meal">Izaberite obed:</label>
+      <select name="meal" id="meal">
+        <option value="breakfast">Dorucak</option>
+        <option value="snack">Uzina</option>
+        <option value="lunch">Rucak</option>
+        <option value="dinner">Vecera</option>
+      </select>
+    </form>
 
-<body>
-  <form>
-    <label for="obed">Izaberite obed:</label>
-    <select name="obed" id="obed">
-      <option value="dorucak">Dorucak</option>
-      <option value="uzina">Uzina</option>
-      <option value="rucak">Rucak</option>
-      <option value="vecera">Vecera</option>
-    </select>
-  </form>
+    <form>
+      <label for="mealOptions">Izaberite opciju obeda:</label>
+      <select name="mealOptions" id="mealOptions">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </form>
 
-  <form>
-    <label for="opcije">Izaberite opciju obeda:</label>
-    <select name="opcije" id="opcije">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select>
-  </form>
+    <br />
 
-  <br>
+    <button onclick="insertNewRow()">Dodaj</button>
 
-  <button onclick="insertNewRow()">Dodaj</button>
-
-  <br>
-  <!-- TEST TABLE -->
-  <!-- <table>
+    <br />
+    <!-- TEST TABLE -->
+    <!-- <table>
     <thead>
       <tr>
         <th rowspan="2">Obed</th>
@@ -60,120 +59,118 @@
     </thead>
   </table> -->
 
-  <h3>Tabela za izbor dorucka</h3>
+    <h3>Tabela za izbor dorucka</h3>
 
-  <table id="dorucak">
-    <thead>
-      <tr>
-        <th rowspan="2">Obed</th>
-        <th rowspan="2">Vrsta jela</th>
-        <th rowspan="2">Jed. mere</th>
-        <th colspan="2">Kolicina jela</th>
-        <th rowspan="2">Termicka serd. i posudje za pripremu jela</th>
-        <th rowspan="2">Vreme obrade</th>
-        <th rowspan="2">Osoblje za termicku obradu</th>
-        <th colspan="2">Linije 1</th>
-        <th colspan="2">Linija 2</th>
-        <th rowspan="2">E) podsetnik...</th>
-      </tr>
-      <tr class="tabele-header">
-        <th>Po 1 vojn.</th>
-        <th>Svega</th>
-        <th>Kol. jela</th>
-        <th>Osoblje za podelu</th>
-        <th>Kol. jela</th>
-        <th>Osoblje za podelu</th>
-      </tr>
-    </thead>
-  </table>
+    <table id="breakfast">
+      <thead>
+        <tr>
+          <th rowspan="2">Obed</th>
+          <th rowspan="2">Vrsta jela</th>
+          <th rowspan="2">Jed. mere</th>
+          <th colspan="2">Kolicina jela</th>
+          <th rowspan="2">Termicka serd. i posudje za pripremu jela</th>
+          <th rowspan="2">Vreme obrade</th>
+          <th rowspan="2">Osoblje za termicku obradu</th>
+          <th colspan="2">Linije 1</th>
+          <th colspan="2">Linija 2</th>
+          <th rowspan="2">E) podsetnik...</th>
+        </tr>
+        <tr class="tabele-header">
+          <th>Po 1 vojn.</th>
+          <th>Svega</th>
+          <th>Kol. jela</th>
+          <th>Osoblje za podelu</th>
+          <th>Kol. jela</th>
+          <th>Osoblje za podelu</th>
+        </tr>
+      </thead>
+    </table>
 
-  <h3>Tabela za izbor uzine</h3>
+    <h3>Tabela za izbor uzine</h3>
 
-  <table id="uzina">
-    <thead>
-      <tr>
-        <th rowspan="2">Obed</th>
-        <th rowspan="2">Vrsta jela</th>
-        <th rowspan="2">Jed. mere</th>
-        <th colspan="2">Kolicina jela</th>
-        <th rowspan="2">Termicka serd. i posudje za pripremu jela</th>
-        <th rowspan="2">Vreme obrade</th>
-        <th rowspan="2">Osoblje za termicku obradu</th>
-        <th colspan="2">Linije 1</th>
-        <th colspan="2">Linija 2</th>
-        <th rowspan="2">E) podsetnik...</th>
-      </tr>
-      <tr class="tabele-header">
-        <th>Po 1 vojn.</th>
-        <th>Svega</th>
-        <th>Kol. jela</th>
-        <th>Osoblje za podelu</th>
-        <th>Kol. jela</th>
-        <th>Osoblje za podelu</th>
-      </tr>
-    </thead>
-  </table>
+    <table id="snack">
+      <thead>
+        <tr>
+          <th rowspan="2">Obed</th>
+          <th rowspan="2">Vrsta jela</th>
+          <th rowspan="2">Jed. mere</th>
+          <th colspan="2">Kolicina jela</th>
+          <th rowspan="2">Termicka serd. i posudje za pripremu jela</th>
+          <th rowspan="2">Vreme obrade</th>
+          <th rowspan="2">Osoblje za termicku obradu</th>
+          <th colspan="2">Linije 1</th>
+          <th colspan="2">Linija 2</th>
+          <th rowspan="2">E) podsetnik...</th>
+        </tr>
+        <tr class="tabele-header">
+          <th>Po 1 vojn.</th>
+          <th>Svega</th>
+          <th>Kol. jela</th>
+          <th>Osoblje za podelu</th>
+          <th>Kol. jela</th>
+          <th>Osoblje za podelu</th>
+        </tr>
+      </thead>
+    </table>
 
-  <h3>Tabela za izbor rucka</h3>
+    <h3>Tabela za izbor rucka</h3>
 
-  <table id="rucak">
-    <thead>
-      <tr>
-        <th rowspan="2">Obed</th>
-        <th rowspan="2">Vrsta jela</th>
-        <th rowspan="2">Jed. mere</th>
-        <th colspan="2">Kolicina jela</th>
-        <th rowspan="2">Termicka serd. i posudje za pripremu jela</th>
-        <th rowspan="2">Vreme obrade</th>
-        <th rowspan="2">Osoblje za termicku obradu</th>
-        <th colspan="2">Linije 1</th>
-        <th colspan="2">Linija 2</th>
-        <th rowspan="2">E) podsetnik...</th>
-      </tr>
-      <tr class="tabele-header">
-        <th>Po 1 vojn.</th>
-        <th>Svega</th>
-        <th>Kol. jela</th>
-        <th>Osoblje za podelu</th>
-        <th>Kol. jela</th>
-        <th>Osoblje za podelu</th>
-      </tr>
-    </thead>
-  </table>
+    <table id="lunch">
+      <thead>
+        <tr>
+          <th rowspan="2">Obed</th>
+          <th rowspan="2">Vrsta jela</th>
+          <th rowspan="2">Jed. mere</th>
+          <th colspan="2">Kolicina jela</th>
+          <th rowspan="2">Termicka serd. i posudje za pripremu jela</th>
+          <th rowspan="2">Vreme obrade</th>
+          <th rowspan="2">Osoblje za termicku obradu</th>
+          <th colspan="2">Linije 1</th>
+          <th colspan="2">Linija 2</th>
+          <th rowspan="2">E) podsetnik...</th>
+        </tr>
+        <tr class="tabele-header">
+          <th>Po 1 vojn.</th>
+          <th>Svega</th>
+          <th>Kol. jela</th>
+          <th>Osoblje za podelu</th>
+          <th>Kol. jela</th>
+          <th>Osoblje za podelu</th>
+        </tr>
+      </thead>
+    </table>
 
-  <h3>Tabela za izbor vecere</h3>
+    <h3>Tabela za izbor vecere</h3>
 
-  <table id="vecera">
-    <thead>
-      <tr>
-        <th rowspan="2">Obed</th>
-        <th rowspan="2">Vrsta jela</th>
-        <th rowspan="2">Jed. mere</th>
-        <th colspan="2">Kolicina jela</th>
-        <th rowspan="2">Termicka serd. i posudje za pripremu jela</th>
-        <th rowspan="2">Vreme obrade</th>
-        <th rowspan="2">Osoblje za termicku obradu</th>
-        <th colspan="2">Linije 1</th>
-        <th colspan="2">Linija 2</th>
-        <th rowspan="2">E) podsetnik...</th>
-      </tr>
-      <tr class="tabele-header">
-        <th>Po 1 vojn.</th>
-        <th>Svega</th>
-        <th>Kol. jela</th>
-        <th>Osoblje za podelu</th>
-        <th>Kol. jela</th>
-        <th>Osoblje za podelu</th>
-      </tr>
-    </thead>
-  </table>
-  <hr>
-  <div id="display-container">
-    <button onclick="showAjaxData()">AJAX test</button>
-  </div>
+    <table id="dinner">
+      <thead>
+        <tr>
+          <th rowspan="2">Obed</th>
+          <th rowspan="2">Vrsta jela</th>
+          <th rowspan="2">Jed. mere</th>
+          <th colspan="2">Kolicina jela</th>
+          <th rowspan="2">Termicka serd. i posudje za pripremu jela</th>
+          <th rowspan="2">Vreme obrade</th>
+          <th rowspan="2">Osoblje za termicku obradu</th>
+          <th colspan="2">Linije 1</th>
+          <th colspan="2">Linija 2</th>
+          <th rowspan="2">E) podsetnik...</th>
+        </tr>
+        <tr class="tabele-header">
+          <th>Po 1 vojn.</th>
+          <th>Svega</th>
+          <th>Kol. jela</th>
+          <th>Osoblje za podelu</th>
+          <th>Kol. jela</th>
+          <th>Osoblje za podelu</th>
+        </tr>
+      </thead>
+    </table>
+    <hr />
+    <div id="display-container">
+      <button onclick="ajaxData()">AJAX test</button>
+    </div>
+  </body>
 
-</body>
-
-<script src="./main.js"></script>
-
+  <script src="./main.js"></script>
 </html>

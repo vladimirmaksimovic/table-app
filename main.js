@@ -1,31 +1,29 @@
-// data - fake JSON
+/**
+ * DATA OBJECTS
+ */
 
-let nizOpcija = [
+// DATA OPTION 1
+
+const mealData = [
   {
     id: 1,
     vrstaJela: "Caj",
     jedinicaMere: "L",
     kolicinaJela: {
       poVojniku: 0.3,
-      svega: 6.9
+      svega: 6.9,
     },
-    /* kolicinaJelaPoVojniku: 0.3,
-    kolicinaJelaSvega: 6.9, */
     termickaSredstvaIPosudjeZaPripremuJela: "1 x 10L",
     vremeObade: "05.00 - 05.30",
     osobljeZaTermickuObradu: "Radomirovic",
     linija1: {
       kolicinaJela: "300g",
-      osobljeZaPodelu: "Sneki"
+      osobljeZaPodelu: "Sneki",
     },
-    /* linija1Kolicina: "330g",
-    linija1Osoblje: "Sneki", */
     linija2: {
       kolicinaJela: "500g",
-      osobljeZaPodelu: "Mile"
-    }
-    /* linija2Kolicina: "500g",
-    linija2Osoblje: "Keba" */
+      osobljeZaPodelu: "Mile",
+    },
   },
   {
     id: 2,
@@ -33,25 +31,19 @@ let nizOpcija = [
     jedinicaMere: "kg",
     kolicinaJela: {
       poVojniku: 0.1,
-      svega: 6.9
+      svega: 6.9,
     },
-    /* kolicinaJelaPoVojniku: 0.1,
-    kolicinaJelaSvega: 6.9, */
     termickaSredstvaIPosudjeZaPripremuJela: "noz",
     vremeObade: "05.10 - 05.30",
     osobljeZaTermickuObradu: "Radomirovic",
     linija1: {
       kolicinaJela: "300g",
-      osobljeZaPodelu: "Super Sneki"
+      osobljeZaPodelu: "Super Sneki",
     },
-    /* linija1Kolicina: "300g",
-    linija1Osoblje: "Ceki", */
     linija2: {
       kolicinaJela: "500g",
-      osobljeZaPodelu: "Mile Kitic"
-    }
-    /* linija2Kolicina: "500g",
-    linija2Osoblje: "Mile" */
+      osobljeZaPodelu: "Mile Kitic",
+    },
   },
   {
     id: 3,
@@ -59,25 +51,19 @@ let nizOpcija = [
     jedinicaMere: "kg",
     kolicinaJela: {
       poVojniku: 0.05,
-      svega: 1.15
+      svega: 1.15,
     },
-    /* kolicinaJelaPoVojniku: 0.05,
-    kolicinaJelaSvega: 1.15, */
     termickaSredstvaIPosudjeZaPripremuJela: " / ",
     vremeObade: "05:30 - 05:40",
     osobljeZaTermickuObradu: "Djuric Nenad",
     linija1: {
       kolicinaJela: "300g",
-      osobljeZaPodelu: "Viki"
+      osobljeZaPodelu: "Viki",
     },
-    /* linija1Kolicina: "560g",
-    linija1Osoblje: "Viki", */
     linija2: {
       kolicinaJela: "500g",
-      osobljeZaPodelu: "Tuki"
-    }
-    /* linija2Kolicina: "500g",
-    linija2Osoblje: "Tuki" */
+      osobljeZaPodelu: "Tuki",
+    },
   },
   {
     id: 4,
@@ -85,30 +71,26 @@ let nizOpcija = [
     jedinicaMere: "Kom",
     kolicinaJela: {
       poVojniku: 1,
-      svega: 23
+      svega: 23,
     },
-    /* kolicinaJelaPoVojniku: 1,
-    kolicinaJelaSvega: 23, */
     termickaSredstvaIPosudjeZaPripremuJela: "1 x 10L",
     vremeObade: "05.30 - 05.50",
     osobljeZaTermickuObradu: "Radomirovic",
     linija1: {
       kolicinaJela: "300g",
-      osobljeZaPodelu: "Rasta"
+      osobljeZaPodelu: "Rasta",
     },
-    /* linija1Kolicina: "50g",
-    linija1Osoblje: "Sani", */
     linija2: {
       kolicinaJela: "500g",
-      osobljeZaPodelu: "Krasta"
-    }
-    /* linija2Kolicina: "150g",
-    linija2Osoblje: "Baja" */
-  }
-]
+      osobljeZaPodelu: "Krasta",
+    },
+  },
+];
 
-// data ver2
-let nizOpcijaKrace = [
+// DATA OPTION 2
+
+/*
+const mealDataV2 = [
   {
     id: 1,
     vrstaJela: "Caj",
@@ -121,7 +103,7 @@ let nizOpcijaKrace = [
     linija1Kolicina: "330g",
     linija1Osoblje: "Sneki",
     linija2Kolicina: "500g",
-    linija2Osoblje: "Keba"
+    linija2Osoblje: "Keba",
   },
   {
     id: 2,
@@ -135,7 +117,7 @@ let nizOpcijaKrace = [
     linija1Kolicina: "300g",
     linija1Osoblje: "Ceki",
     linija2Kolicina: "500g",
-    linija2Osoblje: "Mile"
+    linija2Osoblje: "Mile",
   },
   {
     id: 3,
@@ -149,7 +131,7 @@ let nizOpcijaKrace = [
     linija1Kolicina: "560g",
     linija1Osoblje: "Viki",
     linija2Kolicina: "500g",
-    linija2Osoblje: "Tuki"
+    linija2Osoblje: "Tuki",
   },
   {
     id: 4,
@@ -163,50 +145,51 @@ let nizOpcijaKrace = [
     linija1Kolicina: "50g",
     linija1Osoblje: "Sani",
     linija2Kolicina: "150g",
-    linija2Osoblje: "Baja"
-  }
-]
+    linija2Osoblje: "Baja",
+  },
+];
+*/
 
-// vars
-const table = document.getElementsByTagName("table")
-const data = document.getElementById("data-container")
-const dorucak = document.getElementById("dorucak")
+// VARIABLES
+const table = document.getElementsByTagName("table");
+const data = document.getElementById("data-container");
+const breakfast = document.getElementById("breakfast");
+const meal = document.getElementsByName("meal")[0];
+const mealOptions = document.getElementsByName("mealOptions")[0];
 
-let opcijeObed = document.getElementsByName("obed")[0]
-const opcije = document.getElementsByName("opcije")[0]
+/***********************************************************************/
 
-/************************************/
-
-//const dorucak = document.getElementById("dorucak")
+//const breakfast = document.getElementById("breakfast")
 /* function novaCelija() {
-  dorucak.insertCell(1).innerHTML = "Nova celija"
+  breakfast.insertCell(1).innerHTML = "Nova celija"
 } */
 
-//console.log(opcijeObed.value)
+//console.log(meal.value)
 
 /* function novaCelija() {
-  if (opcijeObed.value === "dorucak" && opcije.value) {
-    nizOpcija.forEach((element) => {
+  if (meal.value === "breakfast" && mealOptions.value) {
+    mealData.forEach((element) => {
       for (const key in element) {
         if (element.hasOwnProperty(key)) {
-          dorucak.insertCell(1).innerHTML = element[opcije.value]
+          breakfast.insertCell(1).innerHTML = element[mealOptions.value]
         }
       }
     })
   }
 } */
 
+/***********************************************************************/
+
+// ON CLICK F-N
 function insertNewRow() {
-  let vrednost = nizOpcija[opcije.value - 1]
-  const thead = document.getElementsByTagName("thead")
+  let vrednost = mealData[mealOptions.value - 1];
 
-  if (opcijeObed.value === "dorucak" && opcije.value) {
-    console.log(opcijeObed.value)
-    console.log(table[opcijeObed.value])
-
-    table[opcijeObed.value].innerHTML +=
+  if (meal.value === "breakfast" && mealOptions.value) {
+    //console.log(meal.value);
+    //console.log(table[meal.value]);
+    table[meal.value].innerHTML +=
       "<tr><td>" +
-      opcijeObed.value +
+      meal.value +
       "</td><td contenteditable>" +
       vrednost.vrstaJela +
       "</td><td>" +
@@ -229,13 +212,12 @@ function insertNewRow() {
       vrednost.linija2.kolicinaJela +
       "</td><td>" +
       vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>"
-  } else if (opcijeObed.value === "uzina" && opcije.value) {
-    console.log(opcijeObed.value)
-
-    table[opcijeObed.value].innerHTML +=
+      "</td></tr>";
+  } else if (meal.value === "snack" && mealOptions.value) {
+    //console.log(meal.value);
+    table[meal.value].innerHTML +=
       "<tr><td>" +
-      opcijeObed.value +
+      meal.value +
       "</td><td>" +
       vrednost.vrstaJela +
       "</td><td>" +
@@ -258,13 +240,12 @@ function insertNewRow() {
       vrednost.linija2.kolicinaJela +
       "</td><td>" +
       vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>"
-  } else if (opcijeObed.value === "rucak" && opcije.value) {
-    console.log(opcijeObed.value)
-
-    table[opcijeObed.value].innerHTML +=
+      "</td></tr>";
+  } else if (meal.value === "lunch" && mealOptions.value) {
+    //console.log(meal.value);
+    table[meal.value].innerHTML +=
       "<tr><td>" +
-      opcijeObed.value +
+      meal.value +
       "</td><td>" +
       vrednost.vrstaJela +
       "</td><td>" +
@@ -287,13 +268,12 @@ function insertNewRow() {
       vrednost.linija2.kolicinaJela +
       "</td><td>" +
       vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>"
+      "</td></tr>";
   } else {
-    console.log(opcijeObed.value)
-
-    table[opcijeObed.value].innerHTML +=
+    //console.log(meal.value);
+    table[meal.value].innerHTML +=
       "<tr><td>" +
-      opcijeObed.value +
+      meal.value +
       "</td><td>" +
       vrednost.vrstaJela +
       "</td><td>" +
@@ -316,51 +296,50 @@ function insertNewRow() {
       vrednost.linija2.kolicinaJela +
       "</td><td>" +
       vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>"
+      "</td></tr>";
   }
 
-  /* if (opcijeObed.value) {
+  /* if (meal.value) {
     thead.style.display = "block";
   } */
 }
 
 function testInsert() {
   // GET TEST TABLE
-  const testTabel = document.getElementsByClassName("test-table")
-  const newRow = document.getElementsByClassName("tr")
-  const newTable = testTabel[opcijeObed.value]
-  const testRow = newTable.insertRow(-1)
+  const testTabel = document.getElementsByClassName("test-table");
+  const newTable = testTabel[meal.value];
+  const testRow = newTable.insertRow(-1);
   // SET VALUE FOR LOOP
-  const vrednost = opcije.value - 1
+  const vrednost = mealOptions.value - 1;
 
-  for (const prop in nizOpcijaKrace[vrednost]) {
-    if (opcijeObed.value === "dorucak" && opcije.value) {
-      //console.log(prop + " ---> " + nizOpcija[i][prop])
+  for (const prop in mealDataV2[vrednost]) {
+    if (meal.value === "breakfast" && mealOptions.value) {
+      //console.log(prop + " ---> " + mealData[i][prop])
       testRow.innerHTML +=
-        //"<td>" + prop + " ---> " + nizOpcija[vrednost][prop] + "</td>"
-        "<tr><td>" + nizOpcija[vrednost][prop] + "</td></tr>"
+        //"<td>" + prop + " ---> " + mealData[vrednost][prop] + "</td>"
+        "<tr><td>" + mealData[vrednost][prop] + "</td></tr>";
     }
   }
 }
 
 // AJAX
-function showAjaxData() {
-  const xhttp = new XMLHttpRequest()
+function ajaxData() {
+  const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      const myObj = JSON.parse(this.responseText)
-      console.log(myObj)
+      const myObj = JSON.parse(this.responseText);
+      console.log(myObj);
       //for (let i = 0; i < myObj.length; i++) {
       for (let key in myObj) {
         if (myObj.hasOwnProperty(key)) {
           document.getElementById("display-container").innerHTML +=
-            "<ul>" + "<li>" + myObj[key] + "</li>" + "</ul>"
+            "<ul>" + "<li>" + myObj[key] + "</li>" + "</ul>";
         }
       }
       //}
       //document.getElementById("display-container").innerHTML = this.responseText
     }
-  }
-  xhttp.open("GET", "./data.json", true)
-  xhttp.send()
+  };
+  xhttp.open("GET", "./data.json", true);
+  xhttp.send();
 }
