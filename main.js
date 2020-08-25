@@ -11,19 +11,19 @@ const mealData = [
     jedinicaMere: "L",
     kolicinaJela: {
       poVojniku: 0.3,
-      svega: 6.9,
+      svega: 6.9
     },
     termickaSredstvaIPosudjeZaPripremuJela: "1 x 10L",
     vremeObade: "05.00 - 05.30",
     osobljeZaTermickuObradu: "Radomirovic",
     linija1: {
       kolicinaJela: "300g",
-      osobljeZaPodelu: "Sneki",
+      osobljeZaPodelu: "Sneki"
     },
     linija2: {
       kolicinaJela: "500g",
-      osobljeZaPodelu: "Mile",
-    },
+      osobljeZaPodelu: "Mile"
+    }
   },
   {
     id: 2,
@@ -31,19 +31,19 @@ const mealData = [
     jedinicaMere: "kg",
     kolicinaJela: {
       poVojniku: 0.1,
-      svega: 6.9,
+      svega: 6.9
     },
     termickaSredstvaIPosudjeZaPripremuJela: "noz",
     vremeObade: "05.10 - 05.30",
     osobljeZaTermickuObradu: "Radomirovic",
     linija1: {
       kolicinaJela: "300g",
-      osobljeZaPodelu: "Super Sneki",
+      osobljeZaPodelu: "Super Sneki"
     },
     linija2: {
       kolicinaJela: "500g",
-      osobljeZaPodelu: "Mile Kitic",
-    },
+      osobljeZaPodelu: "Mile Kitic"
+    }
   },
   {
     id: 3,
@@ -51,19 +51,19 @@ const mealData = [
     jedinicaMere: "kg",
     kolicinaJela: {
       poVojniku: 0.05,
-      svega: 1.15,
+      svega: 1.15
     },
     termickaSredstvaIPosudjeZaPripremuJela: " / ",
     vremeObade: "05:30 - 05:40",
     osobljeZaTermickuObradu: "Djuric Nenad",
     linija1: {
       kolicinaJela: "300g",
-      osobljeZaPodelu: "Viki",
+      osobljeZaPodelu: "Viki"
     },
     linija2: {
       kolicinaJela: "500g",
-      osobljeZaPodelu: "Tuki",
-    },
+      osobljeZaPodelu: "Tuki"
+    }
   },
   {
     id: 4,
@@ -71,21 +71,21 @@ const mealData = [
     jedinicaMere: "Kom",
     kolicinaJela: {
       poVojniku: 1,
-      svega: 23,
+      svega: 23
     },
     termickaSredstvaIPosudjeZaPripremuJela: "1 x 10L",
     vremeObade: "05.30 - 05.50",
     osobljeZaTermickuObradu: "Radomirovic",
     linija1: {
       kolicinaJela: "300g",
-      osobljeZaPodelu: "Rasta",
+      osobljeZaPodelu: "Rasta"
     },
     linija2: {
       kolicinaJela: "500g",
-      osobljeZaPodelu: "Krasta",
-    },
-  },
-];
+      osobljeZaPodelu: "Krasta"
+    }
+  }
+]
 
 // DATA OPTION 2
 
@@ -151,12 +151,15 @@ const mealDataV2 = [
 */
 
 // VARIABLES
-const table = document.getElementsByTagName("table");
-const data = document.getElementById("data-container");
-const breakfast = document.getElementById("breakfast");
-const meal = document.getElementsByName("meal")[0];
-const mealOptions = document.getElementsByName("mealOptions")[0];
+const table = document.getElementsByTagName("table")
+const data = document.getElementById("data-container")
+const breakfast = document.getElementById("breakfast")
+const meal = document.getElementsByName("meal")[0]
+const mealOptions = document.getElementsByName("mealOptions")[0]
+const container = document.getElementById("display-container")
+const ajaxTable = document.querySelector(".ajax-table")
 
+//console.log(ajaxTable)
 /***********************************************************************/
 
 //const breakfast = document.getElementById("breakfast")
@@ -182,7 +185,7 @@ const mealOptions = document.getElementsByName("mealOptions")[0];
 
 // ON CLICK F-N
 function insertNewRow() {
-  let vrednost = mealData[mealOptions.value - 1];
+  let vrednost = mealData[mealOptions.value - 1]
 
   if (meal.value === "breakfast" && mealOptions.value) {
     //console.log(meal.value);
@@ -212,7 +215,7 @@ function insertNewRow() {
       vrednost.linija2.kolicinaJela +
       "</td><td>" +
       vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>";
+      "</td></tr>"
   } else if (meal.value === "snack" && mealOptions.value) {
     //console.log(meal.value);
     table[meal.value].innerHTML +=
@@ -240,7 +243,7 @@ function insertNewRow() {
       vrednost.linija2.kolicinaJela +
       "</td><td>" +
       vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>";
+      "</td></tr>"
   } else if (meal.value === "lunch" && mealOptions.value) {
     //console.log(meal.value);
     table[meal.value].innerHTML +=
@@ -268,7 +271,7 @@ function insertNewRow() {
       vrednost.linija2.kolicinaJela +
       "</td><td>" +
       vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>";
+      "</td></tr>"
   } else {
     //console.log(meal.value);
     table[meal.value].innerHTML +=
@@ -296,7 +299,7 @@ function insertNewRow() {
       vrednost.linija2.kolicinaJela +
       "</td><td>" +
       vrednost.linija2.osobljeZaPodelu +
-      "</td></tr>";
+      "</td></tr>"
   }
 
   /* if (meal.value) {
@@ -306,40 +309,58 @@ function insertNewRow() {
 
 function testInsert() {
   // GET TEST TABLE
-  const testTabel = document.getElementsByClassName("test-table");
-  const newTable = testTabel[meal.value];
-  const testRow = newTable.insertRow(-1);
+  const testTabel = document.getElementsByClassName("test-table")
+  const newTable = testTabel[meal.value]
+  const testRow = newTable.insertRow(-1)
   // SET VALUE FOR LOOP
-  const vrednost = mealOptions.value - 1;
+  const vrednost = mealOptions.value - 1
 
   for (const prop in mealDataV2[vrednost]) {
     if (meal.value === "breakfast" && mealOptions.value) {
       //console.log(prop + " ---> " + mealData[i][prop])
       testRow.innerHTML +=
         //"<td>" + prop + " ---> " + mealData[vrednost][prop] + "</td>"
-        "<tr><td>" + mealData[vrednost][prop] + "</td></tr>";
+        "<tr><td>" + mealData[vrednost][prop] + "</td></tr>"
     }
   }
 }
 
 // AJAX
 function ajaxData() {
-  const xhttp = new XMLHttpRequest();
+  const xhttp = new XMLHttpRequest()
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      const myObj = JSON.parse(this.responseText);
-      console.log(myObj);
-      //for (let i = 0; i < myObj.length; i++) {
-      for (let key in myObj) {
-        if (myObj.hasOwnProperty(key)) {
-          document.getElementById("display-container").innerHTML +=
-            "<ul>" + "<li>" + myObj[key] + "</li>" + "</ul>";
-        }
+      const data = JSON.parse(this.responseText)
+      for (let i = 0; i < data.length; i++) {
+        ajaxTable.innerHTML +=
+          "<tr><td>" +
+          data[i].id +
+          "</td><td>" +
+          data[i].vrstaJela +
+          "</td><td>" +
+          data[i].jedinicaMere +
+          "</td><td>" +
+          data[i].kolicinaJela.poVojniku +
+          "</td><td>" +
+          data[i].kolicinaJela.svega +
+          "</td><td>" +
+          data[i].termickaSredstvaIPosudjeZaPripremuJela +
+          "</td><td>" +
+          data[i].vremeObade +
+          "</td><td>" +
+          data[i].osobljeZaTermickuObradu +
+          "</td><td>" +
+          data[i].linija1.kolicinaJela +
+          "</td><td>" +
+          data[i].linija1.osobljeZaPodelu +
+          "</td><td>" +
+          data[i].linija2.kolicinaJela +
+          "</td><td>" +
+          data[i].linija2.osobljeZaPodelu +
+          "</td></tr>"
       }
-      //}
-      //document.getElementById("display-container").innerHTML = this.responseText
     }
-  };
-  xhttp.open("GET", "./data.json", true);
-  xhttp.send();
+  }
+  xhttp.open("GET", "./data.json", true)
+  xhttp.send()
 }
