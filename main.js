@@ -198,14 +198,16 @@ const opcije = document.getElementsByName("opcije")[0]
 
 function insertNewRow() {
   let vrednost = nizOpcija[opcije.value - 1]
-  const thead = document.getElementsByTagName("thead");
+  const thead = document.getElementsByTagName("thead")
 
   if (opcijeObed.value === "dorucak" && opcije.value) {
-    console.log(opcijeObed.value);
-    console.log(table[opcijeObed.value]);
+    console.log(opcijeObed.value)
+    console.log(table[opcijeObed.value])
 
     table[opcijeObed.value].innerHTML +=
-      "<tr><td>" + opcijeObed.value + "</td><td contenteditable>" +
+      "<tr><td>" +
+      opcijeObed.value +
+      "</td><td contenteditable>" +
       vrednost.vrstaJela +
       "</td><td>" +
       vrednost.jedinicaMere +
@@ -232,7 +234,9 @@ function insertNewRow() {
     console.log(opcijeObed.value)
 
     table[opcijeObed.value].innerHTML +=
-      "<tr><td>" + opcijeObed.value + "</td><td>" +
+      "<tr><td>" +
+      opcijeObed.value +
+      "</td><td>" +
       vrednost.vrstaJela +
       "</td><td>" +
       vrednost.jedinicaMere +
@@ -259,7 +263,9 @@ function insertNewRow() {
     console.log(opcijeObed.value)
 
     table[opcijeObed.value].innerHTML +=
-      "<tr><td>" + opcijeObed.value + "</td><td>" +
+      "<tr><td>" +
+      opcijeObed.value +
+      "</td><td>" +
       vrednost.vrstaJela +
       "</td><td>" +
       vrednost.jedinicaMere +
@@ -286,7 +292,9 @@ function insertNewRow() {
     console.log(opcijeObed.value)
 
     table[opcijeObed.value].innerHTML +=
-      "<tr><td>" + opcijeObed.value + "</td><td>" +
+      "<tr><td>" +
+      opcijeObed.value +
+      "</td><td>" +
       vrednost.vrstaJela +
       "</td><td>" +
       vrednost.jedinicaMere +
@@ -316,7 +324,6 @@ function insertNewRow() {
   } */
 }
 
-
 function testInsert() {
   // GET TEST TABLE
   const testTabel = document.getElementsByClassName("test-table")
@@ -334,4 +341,26 @@ function testInsert() {
         "<tr><td>" + nizOpcija[vrednost][prop] + "</td></tr>"
     }
   }
+}
+
+// AJAX
+function showAjaxData() {
+  const xhttp = new XMLHttpRequest()
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const myObj = JSON.parse(this.responseText)
+      console.log(myObj)
+      //for (let i = 0; i < myObj.length; i++) {
+      for (let key in myObj) {
+        if (myObj.hasOwnProperty(key)) {
+          document.getElementById("display-container").innerHTML +=
+            "<ul>" + "<li>" + myObj[key] + "</li>" + "</ul>"
+        }
+      }
+      //}
+      //document.getElementById("display-container").innerHTML = this.responseText
+    }
+  }
+  xhttp.open("GET", "./data.json", true)
+  xhttp.send()
 }
