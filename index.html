@@ -5,10 +5,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>App</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <!-- NAVBAR -->
+    <nav>
+      <ul>
+        <li><a href="#">index page</a></li>
+        <li><a href="./test-table2.html">test table 2 page</a></li>
+        <li><a href="./test-table3.html">test table 3 page</a></li>
+      </ul>
+    </nav>
+    <!-- /NAVBAR -->
+
+  </header>
+
+  <!-- HEADER -->
+
+  <!-- FORMS FOR OPTIONS SELECTION -->
   <form>
     <label for="meal">Izaberite obed:</label>
     <select name="meal" id="meal">
@@ -28,6 +48,7 @@
       <option value="4">4</option>
     </select>
   </form>
+  <!-- /FORMS FOR OPTIONS SELECTION -->
 
   <br />
 
@@ -59,7 +80,9 @@
       </tr>
     </thead>
   </table> -->
+  <!-- /TEST TABLE -->
 
+  <!-- TABLES WITH DATA FROM JS -->
   <h3>Tabela za izbor dorucka</h3>
 
   <table id="breakfast">
@@ -167,7 +190,11 @@
       </tr>
     </thead>
   </table>
+  <!-- /TABLES WITH DATA FROM JS -->
+
   <hr />
+
+  <!-- TABLE WITH DATA FROM JSON -->
   <div id="display-container">
     <button onclick="ajaxData()">AJAX test</button>
     <table class="ajax-table">
@@ -195,8 +222,10 @@
       </thead>
     </table>
   </div>
+  <!-- /TABLE WITH DATA FROM JSON -->
+
 </body>
 
-<script src="./main.js"></script>
+<script src="./js/main.js"></script>
 
 </html>

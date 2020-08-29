@@ -1,8 +1,4 @@
-/**
- * DATA OBJECTS
- */
-
-// DATA OPTION 1
+// DATA
 
 const mealData = [
   {
@@ -87,69 +83,6 @@ const mealData = [
   }
 ]
 
-// DATA OPTION 2
-
-/*
-const mealDataV2 = [
-  {
-    id: 1,
-    vrstaJela: "Caj",
-    jedinicaMere: "L",
-    kolicinaJelaPoVojniku: 0.3,
-    kolicinaJelaSvega: 6.9,
-    termickaSredstvaIPosudjeZaPripremuJela: "1 x 10L",
-    vremeObade: "05.00 - 05.30",
-    osobljeZaTermickuObradu: "Radomirovic",
-    linija1Kolicina: "330g",
-    linija1Osoblje: "Sneki",
-    linija2Kolicina: "500g",
-    linija2Osoblje: "Keba",
-  },
-  {
-    id: 2,
-    vrstaJela: "Sunkarica",
-    jedinicaMere: "kg",
-    kolicinaJelaPoVojniku: 0.1,
-    kolicinaJelaSvega: 6.9,
-    termickaSredstvaIPosudjeZaPripremuJela: "noz",
-    vremeObade: "05.10 - 05.30",
-    osobljeZaTermickuObradu: "Radomirovic",
-    linija1Kolicina: "300g",
-    linija1Osoblje: "Ceki",
-    linija2Kolicina: "500g",
-    linija2Osoblje: "Mile",
-  },
-  {
-    id: 3,
-    vrstaJela: "Sir topljeni",
-    jedinicaMere: "kg",
-    kolicinaJelaPoVojniku: 0.05,
-    kolicinaJelaSvega: 1.15,
-    termickaSredstvaIPosudjeZaPripremuJela: " / ",
-    vremeObade: "05:30 - 05:40",
-    osobljeZaTermickuObradu: "Djuric Nenad",
-    linija1Kolicina: "560g",
-    linija1Osoblje: "Viki",
-    linija2Kolicina: "500g",
-    linija2Osoblje: "Tuki",
-  },
-  {
-    id: 4,
-    vrstaJela: "Jaje kuvano",
-    jedinicaMere: "Kom",
-    kolicinaJelaPoVojniku: 1,
-    kolicinaJelaSvega: 23,
-    termickaSredstvaIPosudjeZaPripremuJela: "1 x 10L",
-    vremeObade: "05.30 - 05.50",
-    osobljeZaTermickuObradu: "Radomirovic",
-    linija1Kolicina: "50g",
-    linija1Osoblje: "Sani",
-    linija2Kolicina: "150g",
-    linija2Osoblje: "Baja",
-  },
-];
-*/
-
 // VARIABLES
 const table = document.getElementsByTagName("table")
 const data = document.getElementById("data-container")
@@ -191,113 +124,113 @@ function insertNewRow() {
     //console.log(meal.value);
     //console.log(table[meal.value]);
     table[meal.value].innerHTML +=
-      "<tr><td>" +
+      "<tr><td contenteditable='true'>" +
       meal.value +
-      "</td><td contenteditable>" +
+      "</td><td contenteditable='true'>" +
       vrednost.vrstaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.jedinicaMere +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.kolicinaJela.poVojniku +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.kolicinaJela.svega +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.termickaSredstvaIPosudjeZaPripremuJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.vremeObade +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.osobljeZaTermickuObradu +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija1.kolicinaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija1.osobljeZaPodelu +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija2.kolicinaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija2.osobljeZaPodelu +
       "</td></tr>"
   } else if (meal.value === "snack" && mealOptions.value) {
     //console.log(meal.value);
     table[meal.value].innerHTML +=
-      "<tr><td>" +
+      "<tr><td contenteditable='true'>" +
       meal.value +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.vrstaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.jedinicaMere +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.kolicinaJela.poVojniku +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.kolicinaJela.svega +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.termickaSredstvaIPosudjeZaPripremuJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.vremeObade +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.osobljeZaTermickuObradu +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija1.kolicinaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija1.osobljeZaPodelu +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija2.kolicinaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija2.osobljeZaPodelu +
       "</td></tr>"
   } else if (meal.value === "lunch" && mealOptions.value) {
     //console.log(meal.value);
     table[meal.value].innerHTML +=
-      "<tr><td>" +
+      "<tr><td contenteditable='true'>" +
       meal.value +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.vrstaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.jedinicaMere +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.kolicinaJela.poVojniku +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.kolicinaJela.svega +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.termickaSredstvaIPosudjeZaPripremuJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.vremeObade +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.osobljeZaTermickuObradu +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija1.kolicinaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija1.osobljeZaPodelu +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija2.kolicinaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija2.osobljeZaPodelu +
       "</td></tr>"
   } else {
     //console.log(meal.value);
     table[meal.value].innerHTML +=
-      "<tr><td>" +
+      "<tr><td contenteditable='true'>" +
       meal.value +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.vrstaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.jedinicaMere +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.kolicinaJela.poVojniku +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.kolicinaJela.svega +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.termickaSredstvaIPosudjeZaPripremuJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.vremeObade +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.osobljeZaTermickuObradu +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija1.kolicinaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija1.osobljeZaPodelu +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija2.kolicinaJela +
-      "</td><td>" +
+      "</td><td contenteditable='true'>" +
       vrednost.linija2.osobljeZaPodelu +
       "</td></tr>"
   }
@@ -319,8 +252,10 @@ function testInsert() {
     if (meal.value === "breakfast" && mealOptions.value) {
       //console.log(prop + " ---> " + mealData[i][prop])
       testRow.innerHTML +=
-        //"<td>" + prop + " ---> " + mealData[vrednost][prop] + "</td>"
-        "<tr><td>" + mealData[vrednost][prop] + "</td></tr>"
+        //"<td contenteditable='true'>" + prop + " ---> " + mealData[vrednost][prop] + "</td>"
+        "<tr><td contenteditable='true'>" +
+        mealData[vrednost][prop] +
+        "</td></tr>"
     }
   }
 }
@@ -333,34 +268,84 @@ function ajaxData() {
       const data = JSON.parse(this.responseText)
       for (let i = 0; i < data.length; i++) {
         ajaxTable.innerHTML +=
-          "<tr><td>" +
+          "<tr><td contenteditable='true'>" +
           data[i].id +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].vrstaJela +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].jedinicaMere +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].kolicinaJela.poVojniku +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].kolicinaJela.svega +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].termickaSredstvaIPosudjeZaPripremuJela +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].vremeObade +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].osobljeZaTermickuObradu +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].linija1.kolicinaJela +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].linija1.osobljeZaPodelu +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].linija2.kolicinaJela +
-          "</td><td>" +
+          "</td><td contenteditable='true'>" +
           data[i].linija2.osobljeZaPodelu +
           "</td></tr>"
       }
     }
   }
-  xhttp.open("GET", "./data.json", true)
+  xhttp.open("GET", "./data/data.json", true)
+  xhttp.send()
+}
+
+/**
+ * TEST TABLE
+ */
+
+const testTable = document.getElementById("test-table")
+console.log(testTable)
+const ajaxBtn = document.getElementById("ajaxBtn")
+console.log(ajaxBtn)
+
+ajaxBtn.addEventListener("click", testTableAjaxData)
+
+function testTableAjaxData() {
+  const xhttp = new XMLHttpRequest()
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const data = JSON.parse(this.responseText)
+      for (let i = 0; i < data.length; i++) {
+        testTable.innerHTML +=
+          "<td contenteditable='true'>" +
+          data[i].id +
+          "</td><td contenteditable='true'>" +
+          data[i].vrstaJela +
+          "</td><td contenteditable='true'>" +
+          data[i].jedinicaMere +
+          "</td><td contenteditable='true'>" +
+          data[i].kolicinaJela.poVojniku +
+          "</td><td contenteditable='true'>" +
+          data[i].kolicinaJela.svega +
+          "</td><td contenteditable='true'>" +
+          data[i].termickaSredstvaIPosudjeZaPripremuJela +
+          "</td><td contenteditable='true'>" +
+          data[i].vremeObade +
+          "</td><td contenteditable='true'>" +
+          data[i].osobljeZaTermickuObradu +
+          "</td><td contenteditable='true'>" +
+          data[i].linija1.kolicinaJela +
+          "</td><td contenteditable='true'>" +
+          data[i].linija1.osobljeZaPodelu +
+          "</td><td contenteditable='true'>" +
+          data[i].linija2.kolicinaJela +
+          "</td><td contenteditable='true'>" +
+          data[i].linija2.osobljeZaPodelu +
+          "</td>"
+      }
+    }
+  }
+  xhttp.open("GET", "./data/data.json", true)
   xhttp.send()
 }

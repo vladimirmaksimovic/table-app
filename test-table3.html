@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>Test Table</title>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+
+    <!-- NAVBAR -->
+    <nav>
+      <ul>
+        <li><a href="./index.html">index page</a></li>
+        <li><a href="./test-table2.html">test table 2 page</a></li>
+        <li><a href="#">test table 3 page</a></li>
+      </ul>
+    </nav>
+    <!-- /NAVBAR -->
+
+  </header>
+  <!-- HEADER -->
+
+  <!-- FORMS SECTION -->
+  <form>
+    <label for="meal">Izaberite obed:</label>
+    <select name="meal" id="meal">
+      <option value="breakfast">Dorucak</option>
+      <option value="snack">Uzina</option>
+      <option value="lunch">Rucak</option>
+      <option value="dinner">Vecera</option>
+    </select>
+  </form>
+
+  <form>
+    <label for="mealOptions">Izaberite opciju obeda:</label>
+    <select name="mealOptions" id="mealOptions">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </form>
+  <!-- /FORMS SECTION -->
+
+  <br>
+
+  <!-- TBODY TEST -->
+  <div id="display-container2">
+    <div class="btn-container2">
+      <button id="ajaxBtn2">Insert data</button>
+    </div>
+    <table id="test-table2">
+      <thead>
+        <tr>
+          <th rowspan="2">Obed</th>
+          <th rowspan="2">Vrsta jela</th>
+          <th rowspan="2">Jed. mere</th>
+          <th colspan="2">Kolicina jela</th>
+          <th rowspan="2">Termicka serd. i posudje za pripremu jela</th>
+          <th rowspan="2">Vreme obrade</th>
+          <th rowspan="2">Osoblje za termicku obradu</th>
+          <th colspan="2">Linije 1</th>
+          <th colspan="2">Linija 2</th>
+          <th rowspan="2">E) podsetnik...</th>
+        </tr>
+        <tr class="tabele-header">
+          <th>Po 1 vojn.</th>
+          <th>Svega</th>
+          <th>Kol. jela</th>
+          <th>Osoblje za podelu</th>
+          <th>Kol. jela</th>
+          <th>Osoblje za podelu</th>
+        </tr>
+      </thead>
+      <tbody id="dorucak"></tbody>
+      <tbody id="uzina"></tbody>
+      <tbody id="rucak"></tbody>
+      <tbody id="vecera"></tbody>
+    </table>
+  </div>
+  <!-- /TBODY TEST -->
+
+  <!-- JS -->
+  <script>
+
+    // VARIABLES
+    const meal = document.getElementsByName("meal")[0]
+    const mealOptions = document.getElementsByName("mealOptions")[0]
+    const ajaxBtn2 = document.getElementById("ajaxBtn2")
+    const tbDorucak = document.getElementById("dorucak")
+    const tbUzina = document.getElementById("uzina")
+    const tbRucak = document.getElementById("rucak")
+    const tbVecera = document.getElementById("vecera")
+
+    ajaxBtn2.addEventListener("click", testTableAjaxData2)
+
+    function testTableAjaxData2() {
+      const xhttp = new XMLHttpRequest()
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          const data = JSON.parse(this.responseText)
+
+          let vrednost = data[mealOptions.value - 1]
+
+          if (meal.value === "breakfast" && mealOptions.value) {
+            tbDorucak.innerHTML +=
+              "<td contenteditable='true'>" +
+              meal.value +
+              "</td><td contenteditable='true'>" +
+              vrednost.vrstaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.jedinicaMere +
+              "</td><td contenteditable='true'>" +
+              vrednost.kolicinaJela.poVojniku +
+              "</td><td contenteditable='true'>" +
+              vrednost.kolicinaJela.svega +
+              "</td><td contenteditable='true'>" +
+              vrednost.termickaSredstvaIPosudjeZaPripremuJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.vremeObade +
+              "</td><td contenteditable='true'>" +
+              vrednost.osobljeZaTermickuObradu +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija1.kolicinaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija1.osobljeZaPodelu +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija2.kolicinaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija2.osobljeZaPodelu +
+              "</td>"
+          } else if (meal.value === "snack" && mealOptions.value) {
+            tbUzina.innerHTML +=
+              "<td contenteditable='true'>" +
+              meal.value +
+              "</td><td contenteditable='true'>" +
+              vrednost.vrstaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.jedinicaMere +
+              "</td><td contenteditable='true'>" +
+              vrednost.kolicinaJela.poVojniku +
+              "</td><td contenteditable='true'>" +
+              vrednost.kolicinaJela.svega +
+              "</td><td contenteditable='true'>" +
+              vrednost.termickaSredstvaIPosudjeZaPripremuJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.vremeObade +
+              "</td><td contenteditable='true'>" +
+              vrednost.osobljeZaTermickuObradu +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija1.kolicinaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija1.osobljeZaPodelu +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija2.kolicinaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija2.osobljeZaPodelu +
+              "</td>"
+          } else if (meal.value === "lunch" && mealOptions.value) {
+            tbRucak.innerHTML +=
+              "<td contenteditable='true'>" +
+              meal.value +
+              "</td><td contenteditable='true'>" +
+              vrednost.vrstaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.jedinicaMere +
+              "</td><td contenteditable='true'>" +
+              vrednost.kolicinaJela.poVojniku +
+              "</td><td contenteditable='true'>" +
+              vrednost.kolicinaJela.svega +
+              "</td><td contenteditable='true'>" +
+              vrednost.termickaSredstvaIPosudjeZaPripremuJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.vremeObade +
+              "</td><td contenteditable='true'>" +
+              vrednost.osobljeZaTermickuObradu +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija1.kolicinaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija1.osobljeZaPodelu +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija2.kolicinaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija2.osobljeZaPodelu +
+              "</td>"
+          } else {
+            tbVecera.innerHTML +=
+              "<td contenteditable='true'>" +
+              meal.value +
+              "</td><td contenteditable='true'>" +
+              vrednost.vrstaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.jedinicaMere +
+              "</td><td contenteditable='true'>" +
+              vrednost.kolicinaJela.poVojniku +
+              "</td><td contenteditable='true'>" +
+              vrednost.kolicinaJela.svega +
+              "</td><td contenteditable='true'>" +
+              vrednost.termickaSredstvaIPosudjeZaPripremuJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.vremeObade +
+              "</td><td contenteditable='true'>" +
+              vrednost.osobljeZaTermickuObradu +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija1.kolicinaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija1.osobljeZaPodelu +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija2.kolicinaJela +
+              "</td><td contenteditable='true'>" +
+              vrednost.linija2.osobljeZaPodelu +
+              "</td>"
+          }
+        }
+      }
+      xhttp.open("GET", "./data/data.json", true)
+      xhttp.send()
+    }
+
+  </script>
+  <!-- /JS -->
+
+</body>
+
+</html>
