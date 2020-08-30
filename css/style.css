@@ -14,8 +14,20 @@ body {
   line-height: 1.2;
 }
 
-/* NAVBAR */
+/* PRINT STYLE */
+@media print {
+  header,
+  form,
+  button {
+    display: none;
+  }
+}
 
+/* NAVBAR */
+header {
+  display: flex;
+  justify-content: flex-end;
+}
 /* BUTTONS */
 .btn-container {
   text-align: center;
