@@ -66,10 +66,12 @@ header form {
 }
 
 .forms-options select {
+  padding: 0.25rem;
   font-size: 1.2rem;
 }
 
 .forms-options option {
+  padding: 0.25rem;
   font-size: 1rem;
 }
 
@@ -77,7 +79,10 @@ header form {
   text-align: center;
 }
 
-#ajaxBtn {
+#ajaxBtn2,
+#printBtn {
+  padding: 0.25rem;
+  font-size: 1.2rem;
   background-color: darkcyan;
   color: whitesmoke;
 }
