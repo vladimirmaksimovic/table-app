@@ -55,6 +55,24 @@ header form {
 }
 
 /* BUTTONS */
+
+.forms-options {
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem;
+  justify-content: center;
+  align-items: center; */
+  font-size: 1.4rem;
+}
+
+.forms-options select {
+  font-size: 1.2rem;
+}
+
+.forms-options option {
+  font-size: 1rem;
+}
+
 .btn-container {
   text-align: center;
 }
@@ -68,12 +86,14 @@ button:hover {
   background-color: orange;
 }
 
-/* TABLES */
+/*** TABLES ***/
+
 table {
+  border-collapse: collapse;
   margin: 0.5rem auto 1.5rem auto;
 }
 
-table tr th,
+th,
 td {
   border: 1px solid #000;
   text-align: center;
